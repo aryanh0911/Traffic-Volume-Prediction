@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block body %}
+<div >
+
+<h1>Predicted Traffic Volume: {{prediction|round(0)|int}} vehicles/hour</h1>
+<div style="background: rgba(255,255,255,0.8); padding: 20px; margin: 20px; border-radius: 10px;">
+    <h3>Input Parameters:</h3>
+    <p><strong>Date:</strong> {{data1.year}}-{{data1.month}}-{{data1.month_day}}</p>
+    <p><strong>Hour:</strong> {{data1.hour}}:00</p>
+    <p><strong>Temperature:</strong> {{data1.temperature}}K</p>
+    <p><strong>Holiday:</strong> {{'Yes' if data1.is_holiday else 'No'}}</p>
+    <p><strong>Weather:</strong> {{data1.weather_type}} - {{data1.weather_description}}</p>
+</div>
+<div class='bottom'>
+
+<img src="histo.png" class="top" alt="" />
+
+<img src="graphs.png"  class="top" alt="" />
+
+</div>
+
+</div>
+
+{% endblock%}
